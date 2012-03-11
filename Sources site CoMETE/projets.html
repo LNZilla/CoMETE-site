@@ -1,0 +1,279 @@
+<!DOCTYPE html>
+
+<html>
+<head>
+    <title>CoMETE's Home Page</title>
+    <meta name="keywords" content="CoMETE, Université Evry, HTML5, Mozilla, Projet, libre" />
+    <meta charset="UTF-8" />
+    
+    <link rel="stylesheet" href="css/style.css" type="text/css" media="all">
+    <link rel="stylesheet" href="css/jquery.thumbnailScroller.css" type="text/css" />
+    
+    <link rel="icon" href="./images/favicon.ico" type="image/ico">
+    <!--[if lte IE 8]>
+        <script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+    
+    <!-- ScrollThumbnail avec jquerry -->
+    <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.5/jquery.min.js" type="text/javascript" ></script>
+    <script type="text/javascript" src="js/jquery-ui-1.8.13.custom.min.js" type="text/javascript" ></script>
+    <script src="js/jquery.easing.1.3.js" type="text/javascript"></script>
+    <!-- thumbnailScroller script -->
+    <script src="js/jquery.thumbnailScroller.js"></script>
+    <!-- thumbnail scroller markup end -->
+    <script>
+	    /* jQuery.noConflict() for using the plugin along with other libraries. 
+       You can remove it if you won't use other libraries (e.g. prototype, scriptaculous etc.) or 
+       if you include jQuery before other libraries in yourdocument's head tag. 
+       [more info: http://docs.jquery.com/Using_jQuery_with_Other_Libraries] */
+	    jQuery.noConflict(); 
+	    /* calling thumbnailScroller function with options as parameters */
+	    (function($){
+	    window.onload=function(){ 
+		    $("#tS2").thumbnailScroller({ 
+			    scrollerType:"hoverPrecise", 
+			    scrollerOrientation:"horizontal", 
+			    scrollSpeed:5, 
+			    scrollEasing:"easeOutCirc", 
+			    scrollEasingAmount:600, 
+			    acceleration:4, 
+			    scrollSpeed:800, 
+			    noScrollCenterSpace:10, 
+			    autoScrolling:0, 
+			    autoScrollingSpeed:2000, 
+			    autoScrollingEasing:"easeInOutQuad", 
+			    autoScrollingDelay:500 
+		    });
+	    }
+	    })(jQuery);
+    </script>
+    <script>
+	jQuery(document).ready(function(){
+	    jQuery("li").click( function(){
+		//récupération de l'index de l'item sélectionné.
+		var index = jQuery("#jTscroller li").index(this);
+		
+		for(var i=0; i<jQuery("div#pg_title").find('h1').length; i++){
+		    var title = jQuery("div#pg_title").find('h1');
+		    title[i].setAttribute('style', 'display:none;');
+			
+		    var imgs = jQuery("div#pg_preview").find('img');
+		    imgs[i].setAttribute('style', 'display:none;');
+		    
+		    var desc1 = jQuery("div#pg_desc1").find('p');
+		    desc1[i].setAttribute('style', 'display:none;');
+		    
+		    var desc2 = jQuery("div#pg_desc2").find('p');
+		    desc2[i].setAttribute('style', 'display:none;');
+		}
+		
+		var title = jQuery("div#pg_title").find('h1');
+		title[index].setAttribute('style', 'display:block;');
+		    
+		var imgs = jQuery("div#pg_preview").find('img');
+		imgs[index].setAttribute('style', 'display:block;');
+		
+		var desc1 = jQuery("div#pg_desc1").find('p');
+		desc1[index].setAttribute('style', 'display:block;');
+		
+		var desc2 = jQuery("div#pg_desc2").find('p');
+		desc2[index].setAttribute('style', 'display:block;');
+	    });
+	});
+    </script>
+</head>
+
+<body>
+    
+    <div id="content">
+	<header>
+	    <!--<div id="logo">
+		<img src="images/Logo.png" width="90px" height="90px" alt="logo université d'Evry"/>
+	    </div> -->
+	    <div id="logo-left">
+		<a href="index.html" title="Home page"><img src="images/logo-Comete.png" width="100px" height=118px" alt="Logo_comete"/></a>
+	    </div>
+	    <!-- Main navigation menu (horizontal top menu) -->
+	    <nav id="main-navigation">
+		<ul>
+		    <li><a href="a-propos.html" title="aller à la section A propos">A propos</a></li>
+		    <li><a href="#" title="aller à la section Objectifs">Objectifs</a></li>
+		    <li><a href="#" title="aller à la section Projets">Projets</a></li>
+		    <li><a href="liens-externes.html" title="aller à la section Liens externes">Liens externes</a></li>
+		    <li><a href="#" title="aller à la section Contact">Contact</a></li>
+		</ul>
+	    </nav>
+	    <div id="logo-right">
+		<a href="http://www.univ-evry.fr/fr/index.html" title="Université Evry Val d'Essonne"  target="_blank"><img src="images/Logo_Evry2.svg" width="100px" height="100px" alt="Logo_Université_Evry"/></a>
+	    </div>
+	</header>
+	
+        <!-- Project's presentation start here -->
+        <div id="projets">
+	    <!-- thumbnail scroller markup begin -->
+	    <div id="tS2" class="jThumbnailScroller">
+		<div class="jTscrollerContainer">
+		    <ul id="jTscroller" class="jTscroller">
+			<li><a href="#"><img src="images/thumbs/Jelix-Komodo.jpg" alt="Jelix Komodo" class="thumb"/></a></li>
+			<li><a href="#"><img src="images/thumbs/FireTrans.jpg" alt="FireTrans" class="thumb"/></a></li>
+			<li><a href="#"><img src="images/thumbs/Oplay.jpg" alt="Oplay" class="thumb"/></a></li>
+			<li><a href="#"><img src="images/thumbs/WoMoz.jpg" alt="WoMoz" class="thumb"/></a></li>
+			<li><a href="#"><img src="images/thumbs/RecallTB.jpg" alt="RecallTB" class="thumb"/></a></li>
+			<li><a href="#"><img src="images/thumbs/MultiCallLN.jpg" alt="MultiCallLN" class="thumb"/></a></li>
+			<li><a href="#"><img src="images/thumbs/timeSheet.jpg" alt="timeSheet" class="thumb"/></a></li>
+			<li><a href="#"><img src="images/thumbs/timesheetEditor.jpg" alt="timesheet Editor" class="thumb"/></a></li>
+			<li><a href="#"><img src="images/thumbs/WebTeach.jpg" alt="WebTeach" class="thumb"/></a></li>
+			<li><a href="#"><img src="images/thumbs/site-Comete.jpg" alt="site CoMETE" class="thumb"/></a></li>
+			<li><a href="#"><img src="images/thumbs/ResaRessourcesLN.jpg" alt="ResaRessourcesLN" class="thumb"/></a></li>
+			<li><a href="#"><img src="images/thumbs/Nigthingale.jpg" alt="Nigthingale" class="thumb"/></a></li>
+		    </ul>
+		</div>
+	    </div>
+		
+	    <!--<div id="overlay"></div>-->
+	    
+	    <div id="pg_content">
+		<div id="pg_title" class="pg_title">
+		    <h1 style="display:block">Jelix Komodo</h1>
+		    <h1>Projet FireTrans</h1>
+		    <h1>Projet Oplay</h1>
+		    <h1>Projet WoMoz</h1>
+		    <h1>Projet RecallTB</h1>
+		    <h1>Projet MulticallLN</h1>
+		    <h1>Projet Timesheets++</h1>
+		    <h1>Projet Timesheets Editor</h1>
+		    <h1>Projet WebTeach</h1>
+		    <h1>Projet Site CoMETE</h1>
+		    <h1>Reservation Ressources Lightning</h1>
+		    <h1>Projets Nightingale</h1>
+		</div>
+		
+		<div id="pg_preview">
+		    <img class="pg_thumb" src="images/medium/Jelix-Komodo.jpg" alt="Jelix Komodo" style="display:block"/>
+		    <img class="pg_thumb" src="images/medium/FireTrans.jpg" alt="FireTrans"/>
+		    <img class="pg_thumb" src="images/medium/Oplay.jpg" alt="Oplay"/>
+		    <img class="pg_thumb" src="images/medium/WoMoz.jpg" alt="WoMoz"/>
+		    <img class="pg_thumb" src="images/medium/RecallTB.jpg" alt="RecallTB"/>
+		    <img class="pg_thumb" src="images/medium/MultiCallLN.jpg" alt="MultiCallLN"/>
+		    <img class="pg_thumb" src="images/medium/timeSheet.jpg" alt="timeSheet"/>
+		    <img class="pg_thumb" src="images/medium/timesheetEditor.jpg" alt="timesheet Editor"/>
+		    <img class="pg_thumb" src="images/medium/WebTeach.jpg" alt="WebTeach"/>
+		    <img class="pg_thumb" src="images/medium/site-Comete.jpg" alt="site-Comete"/>
+		    <img class="pg_thumb" src="images/medium/ResaRessourcesLN.jpg" alt="ResaRessourcesLN"/>
+		    <img class="pg_thumb" src="images/medium/Nigthingale.jpg" alt="Nigthingale"/>
+		</div>
+		
+		<div id="pg_desc1" class="pg_description">
+		    <h2>Project Description</h2>
+		    <p style="display:block">Jelix est un framework PHP développé par Laurent Jouanneau.<br/>
+			KomodoEdit un éditeur libre utilisant les technologies Mozilla.<br/>
+			Le projet consiste à construire une extension à KomodoEdit pour traiter certains fichiers XML ou .ini de Jelix.<br/>
+			Interfaces en XUL
+		    </p>
+		    <p>Développement d'une extension de Firefox destinée à aider les traducteurs de fichier .dtd et .properties à travailler en local.<br/>
+			Interface d'aide en XUL pour les traducteurs de Firefox et Thunderbird.
+		    </p>
+		    <p>Oplay est une plateforme de jeu Web sur laquelle on peut jouer en utilisant son téléphone mobile comme manette de jeu.<br/>
+			Le but du projet est l'enrichissement en fonctionnalité et capacité technique de la manette de jeu en utilisant les technologie Mozilla.
+		    </p>
+		    <p>Sujet : Rassembler de nouvelles données concernant les femmes dans l'informatique et l'Open Source, en vue de s'en servir pour les études et les présentations WoMoz. L'étude devra être faite au niveau Européen.<br/>
+			Il faudra analyser les résultats obtenus et les présenter sur un site Web utilisant les
+technologies HTML5 (svg, canvas, ...)
+		    </p>
+		    <p>Construire une extension pour permettre le rappel d'une réponse dans Thunderbird.<br/>
+			Sens direct : marquer un message comme "à répondre d'ici ... jours" – et qui rappelle à l'utilisateur de répondre si ce n'est pas déjà fait.<br/>
+			Sens indirect : marquer un message comme "j'attends une réponse d'ici ... jours" et qui rappelle à l'utilisateur de pinger son correspondant s'il n'y a pas de réponse d'ici-là.
+		    </p>
+		    <p>Etendre/patcher Lightning pour :
+			Avoir la possibilité de mettre plusieurs rappels pour un événement (ex. 1 jour avant, puis 15 minutes avant)<br/>
+			&nbsp;&nbsp;&nbsp;- Que les rappels d'événements puissent déclencher une musique (customisable)<br/>
+			&nbsp;&nbsp;&nbsp;- Que les rappels d'événements puissent envoyer un mail<br/>
+			&nbsp;&nbsp;&nbsp;- Que les rappels d'événements puissent ouvrir un fichier arbitraire<br/>
+			&nbsp;&nbsp;&nbsp;- Que les rappels d'événements puissent lancer un script.
+		    </p>
+		    <p>La libraire libtimesheet.js ( et librairies associées) assure l'implémentation en Javascript de SMIL Timesheets<br/>
+			A l'usage certains "bugs" sont apparus montrant<br/>
+			&nbsp;&nbsp;&nbsp;- Une insuffisante prise en compte de situations complexes<br/>
+			&nbsp;&nbsp;&nbsp;- Des manques danhs la spécification de SMIL Timesheets<br/>
+			Le but du projet est de<br/>
+			&nbsp;&nbsp;&nbsp;- Corriger la ou les librairies concernées pour prendre en compte des situations complexes<br/>
+			&nbsp;&nbsp;&nbsp;- Faire des propositions pour amender la spécification de SMIL Timesheets<br/>
+			&nbsp;&nbsp;&nbsp;- Ces propositions pourront être soumises au GT SYMM du W3C</p>
+		    <p>Fabien Cazenave a commencé la construction d'un éditeur WYSIWYG de timesheets.<br/>
+			Le but du projet est de reprendre ce prototype pour en faire un produit utilisable.
+		    </p>
+		    <p>Le but de projet est de construire un système permettant de diffuser des slides sur un réseau local.<br/>
+			Le système s'appuiera sur les Websockets, il consiste à construire :<br/>
+			&nbsp;&nbsp;&nbsp;-Une interface de gestion des connexions sous forme de page web/XUL<br/>
+			&nbsp;&nbsp;&nbsp;-Une connexion persistente entre un Firefox maître et des Firefox esclaves<br/>
+			&nbsp;&nbsp;&nbsp;-Un protocole permettant d'obliger les Firefox esclaves d'afficher le contenu de la page du Firefox maitre
+		    </p>
+		    <p>Le but du projet est de construire le site institutionnel du projet CoMETE, en n'utilisant que des logiciels libres, les technologies "Web Apps" et en structurant le site comme une vitrine du projet.
+		    </p>
+		    <p>Le but du projet est de créer une extension à Lightning permettant d'associer à une date précise un événement dont on peut préciser
+la localisation sous forme d'un lieu déjà enregistré ou de coordonnées GPS, la nature et les ressources nécessaires.<br/>
+			Tout ceci doit être configurable par l'uilisateur. Les informations sont stockées dans un fichier JSON.
+		    </p>
+		    <p>Nightingale est la version OpenSource du player multimédia SongBird, tous les deux sont construits avec les technologies Mozilla.<br/>
+			    Projets proposés :<br/> 
+			    1. Nightingale possède un égaliseur simple (equalizer), cependant il faudrait qu'il soit
+			    plus complet. Choix de présélections, enregistrement de présélections personnalisées. Une extension qui permet de choisir des présélections de base a déjà été réalisée, mais il faudrait que ce soit intégré au coeur du logiciel, et qu'on puisse enregistrer ses propres présélections.<br/>
+			    2. Prise en charge des podcasts (enregistrements, écoutes, listes) (documents de design déjà disponible).<br/>
+			    3. Extraction de pistes audio de CD (sous forme d'extension) (les étudiants peuvent se baser sur le travail déjà fait par Songbird).<br/>
+			    4. Synchronisation de morceaux en Bluetooth.<br/>
+			    5. Écriture des méta-données d'un morceau à partir de son empreinte en utilisant des services comme Musicbrainz (les étudiants peuvent se baser sur des extensions utilisant déjà MusicBrainz)<br/>
+			    6. Spécifier le début et la fin d'un morceau lors de la lecture<br/>
+			    7. Trouver un moyen de partager sur Twitter, Facebook, Google + etc. ce que l'on écoute (les étudiants peuvent se baser sur l'extension qui couvre Twitter, Identi.ca.<br/>
+			    8. Réaliser l'intégration avec Google Music/Spotify/Grooveshark.
+		    </p>
+		</div> <!-- div id="pg_desc1" End -->
+		
+		<div id="pg_desc2" class="pg_description">
+		    <h2>Contact</h2>
+		    <p style="display:block">Laurent Jouanneau<br/>
+			email : ljouanneau@gmail.com<br/>
+			irc : laurentj sur #comet #frenchmoz #xulfr</p>
+		    <p>Jean Bernard Marcon & Sonny Piers<br/>
+			email : jeen-bernard.marcon@laposte.net et sonny.piers@gmail.com<br/>
+			irc : Goofy et sonny sur #comet #frenchmoz #babelzilla</p>
+		    <p>Alain Duval Directeur Technique d'Objectif Informatique<br/>
+			email : aduval@objectif-informatique.fr</p>
+		    <p>Delphine Lébédel<br/>
+			email : dlebedel@mozilla.com<br/>
+			irc : delphine sur #comete #frenchmoz</p>
+		    <p>David Rajchenbach-Teller</br>
+			email : dteller@mozilla.com<br/>
+			irc : Yoric sur #comete #frenchmoz</p>
+		    <p>David Rajchenbach-Teller<br/>
+			email : dteller@mozilla.com<br/>
+			irc : Yoric sur #comete #frenchmoz</p>
+		    <p>Fabien Cazenave & Didier COURTAUD<br/>
+			email : fabien@cazenave.cc & didier.courtaud@univ-evry.fr</br>
+			irc : kaze et Desiderius sur #comete #frenchmoz</p>
+		    <p>Fabien Cazenave</br/>
+			email : fabien@cazenave.cc<br/>
+			irc : kaze sur #comete #frenchmoz</p>
+		    <p>Didier COURTAUD<br/>
+			email : didier.courtaud@univ-evry.fr<br/>
+			irc : Desiderius sur #comete #frenchmoz</p>
+		    <p>Didier COURTAUD<br/>
+			email : didier.courtaud@univ-evry.fr<br/>
+			irc : Desiderius sur #comete #frenchmoz</p>
+		    <p>Didier COURTAUD<br/>
+			email : didier.courtaud@univ-evry.fr<br/>
+			irc : Desiderius sur #comete #frenchmoz</p>
+		    <p>Antoine Turmel<br/>
+			email : antoineturmel@gmail.com</br>
+			irc : GeekShadow sur #comete #frenchmoz</p>
+		</div> <!-- div id="pg_desc2" End -->
+		
+	    </div><!-- div id="pg_content" End -->
+	    
+        </div>
+    </div>    
+    <div class="clear"></div>
+    <footer>
+        <p>&copy; Université d'Evry Val D'Essonne - 2011-2012</p>
+    </footer>
+</body>
+</html>

@@ -3,35 +3,58 @@
     src: url('fonts/GearsOfPeace.ttf');
 }
 
+/*
+%%%%%%%%%%%%%%%%%%%%
+%%%%% CSS Commun
+%%%%%%%%%%%%%%%%%%%%
+*/
+
+
 body {
+  background: repeat-x url(../images/bg-header.png);
   font-family: MetaBold,Trebuchet MS,sans-serif;
   margin: 0 auto;
   padding: 0;
   width: 100%;
 }
 
+#content{
+  width: 960px;
+  margin: 0px auto ;
+}
+
 header {
-  text-align:center;
-  /*background :-moz-linear-gradient(100% 100% 90deg, #2A2E31, #000000) repeat-x scroll 0 0 transparent;*/
-  background: repeat-x url(../images/bg-header.png);
+  /*width: 960px;*/
   height : 250px;
   margin: 0 auto;
+  text-align: center;
 }
 
-/*#logo{
+/* CSS logos -- begining */
+#logo-left{
   float: left;
-  margin: 0;
-}*/
-
-#main-navigation{
-  display: inline-block;
+  margin-top: 25px;
 }
 
-/* CSS main navigation -- begin */
+#logo-right{
+  display: block;
+  float: right;
+  overflow: hidden;
+  position: relative;
+  margin-top: 35px;
+}
+/* CSS logos -- end */
+
+/* CSS main navigation -- begining */
+#main-navigation{
+  float: left;
+  margin-top: 80px;
+}
+
 #main-navigation ul{
-  list-style : none outside none;
-  padding-top: 60px;
-  margin-top: 0px;
+  /*list-style : none outside none;*/
+  margin: 0;
+  padding: 0;
 }
 
 #main-navigation ul li{
@@ -76,47 +99,133 @@ header {
 /* CSS main navigation -- end */
 
 
-.clear {
-    clear: both;
-}
-
-#content{
-  width: 960px;
-  margin: 10px auto ;
-}
-
-#leftCol{
-  width: 600px;
-  float: left;
-}
-
-#rightCol{
-  width: 350px;
-  float: right;
-}
-
 footer {
   text-align:center;
   background : #010202;
   color: white;
   background: repeat url(../images/BackgroundGrey.png);
-  height : 145px;
-  /*width: 960px;*/
   width: auto;
+  height:auto;
   margin: 0 auto;
+  padding: 20px;
 }
 
-#logo-left{
-  position: absolute;
-  left: 100px;
-  top: 10px;
-}
-
-#logo-right{
-	position: absolute;
-	right: 80px;
-	top: 30px;
+.clear {
+    clear: both;
 }
 
 
+#top {
+    -moz-animation: 1s ease 0s alternate none infinite top;
+    top: 0;
+}
 
+#sommaire li {
+  display : list-item;
+  list-style-image : url(../images/puce-bleue.png);
+}
+
+article ul li {
+  display : list-item;
+  list-style-image : url(../images/puce-orange.png);
+}
+
+
+/*
+%%%%%%%%%%%%%%%%%%%%
+%%%%% Page INDEX
+%%%%%%%%%%%%%%%%%%%%
+*/
+
+/*Contenu de gauche*/
+
+#leftCol{
+  width: 475px;
+  float: left;
+}
+
+#title{
+	font-family: "GearsOfPeace", MetaBlack,TrechuchetMS,sans-serif;
+	font-size:30px;
+	color:#FF7F23;
+	text-align:center;
+}
+
+/*Contenu de droite*/
+
+#rightCol{
+  width: 475px;
+  float: right;
+}
+
+#_video{
+  padding:10px 10px 10px 10px;
+  margin:0 0 20px 0;
+  background:transparent url(../images/bg3.png) repeat top left;
+  -moz-box-shadow:-2px 0px 10px #000066 inset;	
+  -webkit-box-shadow:-2px 0px 10px #000066 inset; 
+  box-shadow:-2px 0px 10px #000066 inset;
+}
+
+
+/*
+%%%%%%%%%%%%%%%%%%%%
+%%%%% Page A-PROPOS
+%%%%%%%%%%%%%%%%%%%%
+*/
+
+#leftCol_propos{
+	width: 640px;
+	float: left;
+}
+
+
+#leftCol_propos h1{
+	font-family: "GearsOfPeace", MetaBlack,TrechuchetMS,sans-serif;
+	background:transparent url(../images/bg.png) repeat top left;
+	padding:10px 20px;
+	color:#fff;
+	font-weight:bold;
+	-moz-box-shadow:-2px 0px 10px #000 inset;	
+	-webkit-box-shadow:-2px 0px 10px #000 inset; 
+	box-shadow:-2px 0px 10px #000 inset;
+}
+
+
+#leftCol_propos h2{
+	color:#000;
+	font-size:22px;
+	font-family: "GearsOfPeace", MetaBlack,TrechuchetMS,sans-serif;
+	margin:5px 0 5px 20px;
+	background:transparent url(../images/bg2.png) repeat top left;
+	padding:5px;
+	-moz-box-shadow:-2px 0px 10px #AF4C00 inset;	
+	-webkit-box-shadow:-2px 0px 10px #AF4C00 inset; 
+	box-shadow:-2px 0px 10px #AF4C00 inset;
+}
+
+/*Contenu de droite*/
+
+#rightCol_propos{
+  width: 300px;
+  float: right;
+}
+
+
+
+#rightCol_propos h1{
+	font-family: "GearsOfPeace", MetaBlack,TrechuchetMS,sans-serif;
+	background:transparent url(../images/bg3.png) repeat top left;
+	padding:5px 5px;
+	margin:19px 0 5px 20px;
+	color:#fff;
+	font-weight:bold;
+	-moz-box-shadow:-2px 0px 10px #000066 inset;	
+	-webkit-box-shadow:-2px 0px 10px #000066 inset; 
+	box-shadow:-2px 0px 10px #000066 inset;
+}
+
+#rightCol_propos hr{	
+	width:290px;
+	margin:0 0 0 15px;
+}
